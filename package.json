@@ -1,0 +1,63 @@
+{
+  "name": "definitely-generated",
+  "version": "1.0.0",
+  "description": "TypeScript types that are generated from official OpenAPI and JSONSchema specs",
+  "keywords": [
+    "typescript",
+    "jsonschema",
+    "openapi",
+    "swagger",
+    "kubernetes",
+    "postman",
+    "insomnia"
+  ],
+  "engines": {
+    "node": "16"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/dimitropoulos/definitely-openapi-generated-typed.git",
+  "author": "Dimitri Mitropoulos <dimitrimitropoulos@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "generate": "ts-node generate.ts",
+    "prebuild": "yarn clean && yarn generate",
+    "build": "tsc --build",
+    "delete:build": "tsc --build --clean",
+    "delete:generated": "ts-node delete.ts"
+  },
+  "dependencies": {
+    "@spec2ts/core": "^2.0.0-beta.0",
+    "@spec2ts/jsonschema": "^2.0.0-beta.3",
+    "@spec2ts/openapi": "^2.0.0-beta.3",
+    "@types/js-yaml": "^4.0.1",
+    "@types/node": "^15.6.0",
+    "js-yaml": "^4.1.0",
+    "node-fetch": "^2.6.1",
+    "openapi-typescript": "^3.2.4",
+    "ramda": "^0.27.1",
+    "ramda-adjunct": "^2.32.0",
+    "ts-node": "^9.1.1",
+    "typescript": "~4.2.4"
+  },
+  "devDependencies": {
+    "@types/eslint": "^7.2.11",
+    "@types/node-fetch": "^2.5.10",
+    "@types/ramda": "^0.27.40",
+    "@typescript-eslint/eslint-plugin": "~4.24.0",
+    "@typescript-eslint/parser": "~4.24.0",
+    "eslint": "~7.26.0",
+    "eslint-config-intense": "0.7.6",
+    "eslint-plugin-eslint-comments": "~3.2.0",
+    "eslint-plugin-import": "~2.23.2",
+    "eslint-plugin-jest": "~24.3.6",
+    "eslint-plugin-jest-formatting": "~3.0.0",
+    "eslint-plugin-no-secrets": "~0.8.9",
+    "eslint-plugin-node": "~11.1.0",
+    "eslint-plugin-ramda": "~2.5.1",
+    "eslint-plugin-react": "~7.23.2",
+    "eslint-plugin-react-hooks": "~4.2.0",
+    "eslint-plugin-simple-import-sort": "~7.0.0"
+  }
+}
